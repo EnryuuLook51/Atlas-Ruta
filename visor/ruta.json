@@ -1,17 +1,37 @@
 {
   "id": "atlas-ruta",
   "nombre": "Atlas Ruta",
+  "version": 2,
   "subtitulo": "Mapa de conocimiento",
   "descripcion": "Desde las bases hasta el nivel universitario. Cada línea de color es un área, cada estación es un tema y, dentro de cada tema, están sus subtemas. Las líneas se bifurcan cuando una materia se abre en varias especialidades.",
   "comoLeer": "Elige un área. Avanza de las bases al nivel universitario. Área → especialidad → tema. El progreso se lee de arriba abajo.",
-  "referencia": "Nivel de referencia: educación básica hasta licenciatura. Los temas universitarios varían según la carrera.",
+  "referencia": "Nivel de referencia: educación básica hasta licenciatura. Los temas universitarios varían según la carrera. Los cursos sugeridos son gratuitos o tienen versión gratuita.",
   "actualizado": "2026-11-07",
   "niveles": [
-    { "id": "basico", "orden": 1, "nombre": "Básico" },
-    { "id": "intermedio", "orden": 2, "nombre": "Intermedio" },
-    { "id": "avanzado", "orden": 3, "nombre": "Avanzado" },
-    { "id": "universitario", "orden": 4, "nombre": "Universitario" }
+    {
+      "id": "basico",
+      "orden": 1,
+      "nombre": "Básico"
+    },
+    {
+      "id": "intermedio",
+      "orden": 2,
+      "nombre": "Intermedio"
+    },
+    {
+      "id": "avanzado",
+      "orden": 3,
+      "nombre": "Avanzado"
+    },
+    {
+      "id": "universitario",
+      "orden": 4,
+      "nombre": "Universitario"
+    }
   ],
+  "tiposConexion": {
+    "base": "El tema de origen conviene repasarlo antes de entrar al de destino (o en paralelo, si están en el mismo nivel)."
+  },
   "areas": [
     {
       "id": "matematicas",
@@ -24,30 +44,58 @@
           "id": "numeros-y-algebra",
           "nombre": "Números y álgebra",
           "inicio": "basico",
+          "cursos": [
+            {
+              "proveedor": "Khan Academy",
+              "nombre": "Álgebra",
+              "url": "https://es.khanacademy.org/math/algebra"
+            },
+            {
+              "proveedor": "MIT OpenCourseWare",
+              "nombre": "18.06 Linear Algebra",
+              "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/"
+            }
+          ],
           "temas": [
             {
               "id": "numeros-y-operaciones",
               "nivel": "basico",
               "nombre": "Números y operaciones",
-              "subtemas": ["Enteros y fracciones", "Decimales y porcentajes", "Proporciones y regla de tres"]
+              "subtemas": [
+                "Enteros y fracciones",
+                "Decimales y porcentajes",
+                "Proporciones y regla de tres"
+              ]
             },
             {
               "id": "algebra-elemental",
               "nivel": "intermedio",
               "nombre": "Álgebra elemental",
-              "subtemas": ["Expresiones algebraicas", "Ecuaciones de primer grado", "Sistemas de ecuaciones"]
+              "subtemas": [
+                "Expresiones algebraicas",
+                "Ecuaciones de primer grado",
+                "Sistemas de ecuaciones"
+              ]
             },
             {
               "id": "funciones",
               "nivel": "avanzado",
               "nombre": "Funciones",
-              "subtemas": ["Lineales y cuadráticas", "Exponenciales", "Logaritmos"]
+              "subtemas": [
+                "Lineales y cuadráticas",
+                "Exponenciales y logaritmos",
+                "Sucesiones y series"
+              ]
             },
             {
               "id": "algebra-lineal",
               "nivel": "universitario",
               "nombre": "Álgebra lineal",
-              "subtemas": ["Matrices y determinantes", "Espacios vectoriales", "Valores y vectores propios"]
+              "subtemas": [
+                "Matrices y determinantes",
+                "Espacios vectoriales",
+                "Valores y vectores propios"
+              ]
             }
           ]
         },
@@ -55,30 +103,58 @@
           "id": "geometria-y-trigonometria",
           "nombre": "Geometría y trigonometría",
           "inicio": "basico",
+          "cursos": [
+            {
+              "proveedor": "Khan Academy",
+              "nombre": "Geometría",
+              "url": "https://es.khanacademy.org/math/geometry"
+            },
+            {
+              "proveedor": "Khan Academy",
+              "nombre": "Trigonometría",
+              "url": "https://es.khanacademy.org/math/trigonometry"
+            }
+          ],
           "temas": [
             {
               "id": "geometria-plana",
               "nivel": "basico",
               "nombre": "Geometría plana",
-              "subtemas": ["Figuras y ángulos", "Áreas y perímetros", "Teorema de Pitágoras"]
+              "subtemas": [
+                "Figuras y ángulos",
+                "Áreas y perímetros",
+                "Teorema de Pitágoras"
+              ]
             },
             {
               "id": "trigonometria",
               "nivel": "intermedio",
               "nombre": "Trigonometría",
-              "subtemas": ["Razones trigonométricas", "Identidades", "Triángulos no rectángulos"]
+              "subtemas": [
+                "Razones trigonométricas",
+                "Triángulos no rectángulos",
+                "Vectores en el plano"
+              ]
             },
             {
               "id": "geometria-analitica",
               "nivel": "avanzado",
               "nombre": "Geometría analítica",
-              "subtemas": ["Rectas y circunferencias", "Cónicas", "Vectores en el plano"]
+              "subtemas": [
+                "Rectas y circunferencias",
+                "Cónicas",
+                "Coordenadas polares"
+              ]
             },
             {
-              "id": "topologia-y-geometria",
+              "id": "topologia",
               "nivel": "universitario",
-              "nombre": "Topología y geometría",
-              "subtemas": ["Espacios métricos", "Conjuntos abiertos y cerrados", "Geometría diferencial"]
+              "nombre": "Topología",
+              "subtemas": [
+                "Espacios métricos",
+                "Conjuntos abiertos y cerrados",
+                "Continuidad y compacidad"
+              ]
             }
           ]
         },
@@ -86,24 +162,48 @@
           "id": "calculo-y-analisis",
           "nombre": "Cálculo y análisis",
           "inicio": "intermedio",
+          "cursos": [
+            {
+              "proveedor": "Khan Academy",
+              "nombre": "Cálculo diferencial",
+              "url": "https://es.khanacademy.org/math/differential-calculus"
+            },
+            {
+              "proveedor": "3Blue1Brown",
+              "nombre": "Essence of calculus",
+              "url": "https://www.3blue1brown.com/topics/calculus"
+            }
+          ],
           "temas": [
             {
               "id": "limites-y-continuidad",
               "nivel": "intermedio",
               "nombre": "Límites y continuidad",
-              "subtemas": ["Límites y sus propiedades", "Continuidad", "Indeterminaciones"]
+              "subtemas": [
+                "Límites y sus propiedades",
+                "Continuidad",
+                "Indeterminaciones"
+              ]
             },
             {
               "id": "derivadas-e-integrales",
               "nivel": "avanzado",
               "nombre": "Derivadas e integrales",
-              "subtemas": ["Reglas de derivación", "Optimización", "Integral definida y áreas"]
+              "subtemas": [
+                "Reglas de derivación",
+                "Optimización",
+                "Integral definida y áreas"
+              ]
             },
             {
               "id": "calculo-multivariable",
               "nivel": "universitario",
               "nombre": "Cálculo multivariable",
-              "subtemas": ["Derivadas parciales", "Integrales múltiples", "Ecuaciones diferenciales"]
+              "subtemas": [
+                "Derivadas parciales",
+                "Integrales múltiples",
+                "Ecuaciones diferenciales"
+              ]
             }
           ]
         },
@@ -111,30 +211,102 @@
           "id": "probabilidad-y-estadistica",
           "nombre": "Probabilidad y estadística",
           "inicio": "basico",
+          "cursos": [
+            {
+              "proveedor": "Khan Academy",
+              "nombre": "Estadística y probabilidad",
+              "url": "https://es.khanacademy.org/math/statistics-probability"
+            },
+            {
+              "proveedor": "Harvard",
+              "nombre": "Stat 110",
+              "url": "https://projects.iq.harvard.edu/stat110"
+            }
+          ],
           "temas": [
             {
               "id": "estadistica-descriptiva",
               "nivel": "basico",
               "nombre": "Estadística descriptiva",
-              "subtemas": ["Media, mediana y moda", "Tablas y gráficos", "Dispersión"]
+              "subtemas": [
+                "Media, mediana y moda",
+                "Tablas y gráficos",
+                "Dispersión"
+              ]
             },
             {
               "id": "probabilidad",
               "nivel": "intermedio",
               "nombre": "Probabilidad",
-              "subtemas": ["Conteo y combinatoria", "Eventos y reglas", "Teorema de Bayes"]
+              "subtemas": [
+                "Espacio muestral y eventos",
+                "Probabilidad condicional",
+                "Teorema de Bayes"
+              ]
             },
             {
               "id": "distribuciones",
               "nivel": "avanzado",
               "nombre": "Distribuciones",
-              "subtemas": ["Binomial", "Normal", "Distribución muestral"]
+              "subtemas": [
+                "Binomial",
+                "Normal",
+                "Distribución muestral"
+              ]
             },
             {
               "id": "inferencia",
               "nivel": "universitario",
               "nombre": "Inferencia",
-              "subtemas": ["Estimación", "Pruebas de hipótesis", "Regresión"]
+              "subtemas": [
+                "Estimación",
+                "Pruebas de hipótesis",
+                "Regresión"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "matematica-discreta",
+          "nombre": "Matemática discreta",
+          "inicio": "intermedio",
+          "cursos": [
+            {
+              "proveedor": "MIT OpenCourseWare",
+              "nombre": "6.042J Mathematics for Computer Science",
+              "url": "https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-fall-2010/"
+            }
+          ],
+          "temas": [
+            {
+              "id": "conjuntos-y-logica",
+              "nivel": "intermedio",
+              "nombre": "Conjuntos y lógica",
+              "subtemas": [
+                "Conjuntos y relaciones",
+                "Lógica proposicional",
+                "Inducción matemática"
+              ]
+            },
+            {
+              "id": "combinatoria-y-grafos",
+              "nivel": "avanzado",
+              "nombre": "Combinatoria y grafos",
+              "subtemas": [
+                "Técnicas de conteo",
+                "Recurrencias",
+                "Teoría de grafos"
+              ]
+            },
+            {
+              "id": "estructuras-algebraicas",
+              "nivel": "universitario",
+              "nombre": "Estructuras algebraicas",
+              "subtemas": [
+                "Teoría de números",
+                "Grupos y anillos",
+                "Álgebra booleana"
+              ]
             }
           ]
         }
@@ -148,33 +320,115 @@
       "descripcion": "Cómo se mueve y se transforma la materia y la energía.",
       "especialidades": [
         {
-          "id": "de-la-medicion-a-la-mecanica",
-          "nombre": "De la medición a la mecánica",
+          "id": "mecanica-y-ondas",
+          "nombre": "Mecánica y ondas",
           "inicio": "basico",
+          "cursos": [
+            {
+              "proveedor": "Khan Academy",
+              "nombre": "Física",
+              "url": "https://es.khanacademy.org/science/physics"
+            },
+            {
+              "proveedor": "Caltech",
+              "nombre": "The Feynman Lectures on Physics",
+              "url": "https://www.feynmanlectures.caltech.edu"
+            }
+          ],
           "temas": [
             {
               "id": "magnitudes-y-medicion",
               "nivel": "basico",
               "nombre": "Magnitudes y medición",
-              "subtemas": ["Unidades y cifras significativas", "Vectores", "Notación científica"]
+              "subtemas": [
+                "Unidades y cifras significativas",
+                "Notación científica",
+                "Gráficas y proporcionalidad"
+              ]
             },
             {
               "id": "mecanica-clasica",
               "nivel": "intermedio",
               "nombre": "Mecánica clásica",
-              "subtemas": ["Cinemática", "Dinámica y leyes de Newton", "Trabajo y energía"]
+              "subtemas": [
+                "Cinemática",
+                "Leyes de Newton",
+                "Trabajo y energía"
+              ]
             },
             {
-              "id": "electromagnetismo-y-termodinamica",
+              "id": "oscilaciones-y-ondas",
               "nivel": "avanzado",
-              "nombre": "Electromagnetismo y termodinámica",
-              "subtemas": ["Carga, campo y circuitos", "Calor y temperatura", "Leyes de la termodinámica"]
+              "nombre": "Oscilaciones y ondas",
+              "subtemas": [
+                "Movimiento armónico simple",
+                "Ondas y sonido",
+                "Óptica"
+              ]
             },
             {
               "id": "fisica-moderna",
               "nivel": "universitario",
               "nombre": "Física moderna",
-              "subtemas": ["Relatividad especial", "Mecánica cuántica", "Física estadística"]
+              "subtemas": [
+                "Relatividad especial",
+                "Mecánica cuántica",
+                "Física nuclear"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "energia-y-electromagnetismo",
+          "nombre": "Energía y electromagnetismo",
+          "inicio": "basico",
+          "cursos": [
+            {
+              "proveedor": "PhET · Universidad de Colorado",
+              "nombre": "Simulaciones interactivas",
+              "url": "https://phet.colorado.edu/es/"
+            }
+          ],
+          "temas": [
+            {
+              "id": "energia-y-calor",
+              "nivel": "basico",
+              "nombre": "Energía y calor",
+              "subtemas": [
+                "Formas de energía",
+                "Temperatura y calor",
+                "Conservación de la energía"
+              ]
+            },
+            {
+              "id": "electricidad-y-magnetismo",
+              "nivel": "intermedio",
+              "nombre": "Electricidad y magnetismo",
+              "subtemas": [
+                "Carga y corriente",
+                "Circuitos y ley de Ohm",
+                "Imanes y campo magnético"
+              ]
+            },
+            {
+              "id": "electromagnetismo",
+              "nivel": "avanzado",
+              "nombre": "Electromagnetismo",
+              "subtemas": [
+                "Campo y potencial eléctrico",
+                "Inducción electromagnética",
+                "Ondas electromagnéticas"
+              ]
+            },
+            {
+              "id": "termodinamica",
+              "nivel": "universitario",
+              "nombre": "Termodinámica",
+              "subtemas": [
+                "Leyes de la termodinámica",
+                "Entropía",
+                "Física estadística"
+              ]
             }
           ]
         }
@@ -188,33 +442,105 @@
       "descripcion": "La estructura de la materia y sus transformaciones.",
       "especialidades": [
         {
-          "id": "de-la-materia-a-la-reaccion",
-          "nombre": "De la materia a la reacción",
+          "id": "quimica-general",
+          "nombre": "Química general",
           "inicio": "basico",
+          "cursos": [
+            {
+              "proveedor": "Khan Academy",
+              "nombre": "Química",
+              "url": "https://es.khanacademy.org/science/chemistry"
+            },
+            {
+              "proveedor": "LibreTexts",
+              "nombre": "Chemistry",
+              "url": "https://chem.libretexts.org"
+            }
+          ],
           "temas": [
             {
               "id": "materia",
               "nivel": "basico",
               "nombre": "Materia",
-              "subtemas": ["Estados y mezclas", "Tabla periódica", "Átomos y electrones"]
+              "subtemas": [
+                "Estados y mezclas",
+                "Átomos y electrones",
+                "Tabla periódica"
+              ]
             },
             {
               "id": "enlaces-y-reacciones",
               "nivel": "intermedio",
               "nombre": "Enlaces y reacciones",
-              "subtemas": ["Enlace iónico y covalente", "Estequiometría", "Ácidos y bases"]
+              "subtemas": [
+                "Enlace iónico y covalente",
+                "Estequiometría",
+                "Ácidos y bases"
+              ]
             },
             {
-              "id": "organica-e-inorganica",
+              "id": "equilibrio-y-cinetica",
               "nivel": "avanzado",
-              "nombre": "Orgánica e inorgánica",
-              "subtemas": ["Grupos funcionales", "Compuestos de coordinación", "Termoquímica"]
+              "nombre": "Equilibrio y cinética",
+              "subtemas": [
+                "Termoquímica",
+                "Cinética química",
+                "Equilibrio químico"
+              ]
             },
             {
-              "id": "fisicoquimica-y-analitica",
+              "id": "fisicoquimica",
               "nivel": "universitario",
-              "nombre": "Fisicoquímica y analítica",
-              "subtemas": ["Cinética química", "Equilibrio", "Espectroscopía"]
+              "nombre": "Fisicoquímica",
+              "subtemas": [
+                "Termodinámica química",
+                "Electroquímica",
+                "Química cuántica"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "organica-y-analitica",
+          "nombre": "Orgánica y analítica",
+          "inicio": "intermedio",
+          "cursos": [
+            {
+              "proveedor": "Khan Academy",
+              "nombre": "Química orgánica",
+              "url": "https://es.khanacademy.org/science/organic-chemistry"
+            }
+          ],
+          "temas": [
+            {
+              "id": "quimica-del-carbono",
+              "nivel": "intermedio",
+              "nombre": "Química del carbono",
+              "subtemas": [
+                "Hidrocarburos",
+                "Grupos funcionales",
+                "Isomería"
+              ]
+            },
+            {
+              "id": "quimica-organica",
+              "nivel": "avanzado",
+              "nombre": "Química orgánica",
+              "subtemas": [
+                "Mecanismos de reacción",
+                "Síntesis orgánica",
+                "Polímeros"
+              ]
+            },
+            {
+              "id": "quimica-analitica",
+              "nivel": "universitario",
+              "nombre": "Química analítica",
+              "subtemas": [
+                "Volumetría",
+                "Espectroscopía",
+                "Cromatografía"
+              ]
             }
           ]
         }
@@ -228,33 +554,115 @@
       "descripcion": "La vida, desde la célula hasta los ecosistemas.",
       "especialidades": [
         {
-          "id": "de-la-celula-a-la-molecula",
-          "nombre": "De la célula a la molécula",
+          "id": "celula-y-genetica",
+          "nombre": "Célula y genética",
           "inicio": "basico",
+          "cursos": [
+            {
+              "proveedor": "Khan Academy",
+              "nombre": "Biología",
+              "url": "https://es.khanacademy.org/science/biology"
+            },
+            {
+              "proveedor": "OpenStax",
+              "nombre": "Biology 2e",
+              "url": "https://openstax.org/details/books/biology-2e"
+            }
+          ],
           "temas": [
             {
               "id": "la-celula",
               "nivel": "basico",
               "nombre": "La célula",
-              "subtemas": ["Membrana y organelos", "Ciclo celular", "Metabolismo básico"]
+              "subtemas": [
+                "Membrana y organelos",
+                "Ciclo celular",
+                "Metabolismo básico"
+              ]
             },
             {
-              "id": "genetica-y-evolucion",
+              "id": "genetica",
               "nivel": "intermedio",
-              "nombre": "Genética y evolución",
-              "subtemas": ["Herencia mendeliana", "ADN y cromosomas", "Selección natural"]
+              "nombre": "Genética",
+              "subtemas": [
+                "Herencia mendeliana",
+                "ADN y cromosomas",
+                "Mutaciones"
+              ]
             },
             {
-              "id": "fisiologia-y-ecologia",
+              "id": "bioquimica",
               "nivel": "avanzado",
-              "nombre": "Fisiología y ecología",
-              "subtemas": ["Sistemas del cuerpo", "Poblaciones y comunidades", "Ciclos biogeoquímicos"]
+              "nombre": "Bioquímica",
+              "subtemas": [
+                "Biomoléculas",
+                "Enzimas",
+                "Respiración y fotosíntesis"
+              ]
             },
             {
               "id": "biologia-molecular",
               "nivel": "universitario",
               "nombre": "Biología molecular",
-              "subtemas": ["Replicación y expresión génica", "Inmunología", "Biotecnología"]
+              "subtemas": [
+                "Replicación y expresión génica",
+                "Ingeniería genética",
+                "Biotecnología"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "organismos-y-ecosistemas",
+          "nombre": "Organismos y ecosistemas",
+          "inicio": "basico",
+          "cursos": [
+            {
+              "proveedor": "Khan Academy",
+              "nombre": "Biología",
+              "url": "https://es.khanacademy.org/science/biology"
+            }
+          ],
+          "temas": [
+            {
+              "id": "seres-vivos",
+              "nivel": "basico",
+              "nombre": "Seres vivos",
+              "subtemas": [
+                "Clasificación de los seres vivos",
+                "Plantas y animales",
+                "Cuerpo humano"
+              ]
+            },
+            {
+              "id": "evolucion",
+              "nivel": "intermedio",
+              "nombre": "Evolución",
+              "subtemas": [
+                "Selección natural",
+                "Especiación",
+                "Genética de poblaciones"
+              ]
+            },
+            {
+              "id": "fisiologia",
+              "nivel": "avanzado",
+              "nombre": "Fisiología",
+              "subtemas": [
+                "Sistemas del cuerpo",
+                "Homeostasis",
+                "Inmunología"
+              ]
+            },
+            {
+              "id": "ecologia",
+              "nivel": "universitario",
+              "nombre": "Ecología",
+              "subtemas": [
+                "Poblaciones y comunidades",
+                "Ciclos biogeoquímicos",
+                "Conservación y biodiversidad"
+              ]
             }
           ]
         }
@@ -271,61 +679,117 @@
           "id": "lectura-gramatica-y-literatura",
           "nombre": "Lectura, gramática y literatura",
           "inicio": "basico",
+          "cursos": [
+            {
+              "proveedor": "Real Academia Española",
+              "nombre": "Diccionario y Ortografía",
+              "url": "https://www.rae.es"
+            },
+            {
+              "proveedor": "FundéuRAE",
+              "nombre": "Dudas de español",
+              "url": "https://www.fundeu.es"
+            }
+          ],
           "temas": [
             {
               "id": "lectoescritura",
               "nivel": "basico",
               "nombre": "Lectoescritura",
-              "subtemas": ["Ortografía y puntuación", "Comprensión lectora", "Vocabulario"]
+              "subtemas": [
+                "Ortografía y puntuación",
+                "Comprensión lectora",
+                "Vocabulario"
+              ]
             },
             {
               "id": "gramatica-y-redaccion",
               "nivel": "intermedio",
               "nombre": "Gramática y redacción",
-              "subtemas": ["Sintaxis y morfología", "Textos argumentativos", "Figuras retóricas"]
+              "subtemas": [
+                "Sintaxis y morfología",
+                "Cohesión y coherencia",
+                "Textos argumentativos"
+              ]
             },
             {
               "id": "analisis-literario",
               "nivel": "avanzado",
               "nombre": "Análisis literario",
-              "subtemas": ["Géneros literarios", "Corrientes y épocas", "Análisis de textos"]
+              "subtemas": [
+                "Géneros literarios",
+                "Corrientes y épocas",
+                "Figuras retóricas"
+              ]
             },
             {
-              "id": "linguistica-y-filologia",
+              "id": "linguistica",
               "nivel": "universitario",
-              "nombre": "Lingüística y filología",
-              "subtemas": ["Fonética y fonología", "Semántica y pragmática", "Teoría literaria"]
+              "nombre": "Lingüística",
+              "subtemas": [
+                "Fonética y fonología",
+                "Semántica y pragmática",
+                "Sociolingüística"
+              ]
             }
           ]
         },
         {
           "id": "idiomas",
-          "nombre": "Idiomas",
+          "nombre": "Idiomas extranjeros",
           "inicio": "basico",
+          "cursos": [
+            {
+              "proveedor": "Duolingo",
+              "nombre": "Práctica diaria",
+              "url": "https://www.duolingo.com"
+            },
+            {
+              "proveedor": "BBC",
+              "nombre": "Learning English",
+              "url": "https://www.bbc.co.uk/learningenglish"
+            }
+          ],
           "temas": [
             {
               "id": "bases-a1-a2",
               "nivel": "basico",
               "nombre": "Bases (A1–A2)",
-              "subtemas": ["Vocabulario cotidiano", "Presente y pasado simple", "Conversación básica"]
+              "subtemas": [
+                "Vocabulario cotidiano",
+                "Presente y pasado simple",
+                "Conversación básica"
+              ]
             },
             {
               "id": "independiente-b1-b2",
               "nivel": "intermedio",
               "nombre": "Independiente (B1–B2)",
-              "subtemas": ["Textos de opinión", "Conversación fluida", "Tiempos compuestos"]
+              "subtemas": [
+                "Textos de opinión",
+                "Conversación fluida",
+                "Tiempos compuestos"
+              ]
             },
             {
               "id": "avanzado-c1",
               "nivel": "avanzado",
               "nombre": "Avanzado (C1)",
-              "subtemas": ["Matices y registros", "Textos complejos", "Expresión escrita"]
+              "subtemas": [
+                "Matices y registros",
+                "Textos complejos",
+                "Expresión escrita"
+              ]
             },
             {
               "id": "dominio-c2",
               "nivel": "universitario",
               "nombre": "Dominio (C2)",
-              "subtemas": ["Traducción", "Redacción académica", "Interpretación de textos"]
+              "subtemas": [
+                "Traducción",
+                "Redacción académica",
+                "Interpretación de textos"
+              ]
             }
           ]
         }
@@ -336,36 +800,59 @@
       "indice": 6,
       "nombre": "Humanidades y sociales",
       "color": "#B388FF",
-      "descripcion": "Historia, pensamiento y cómo funcionan las sociedades.",
+      "descripcion": "Historia, pensamiento, economía y las reglas que organizan la sociedad.",
       "especialidades": [
         {
           "id": "historia",
           "nombre": "Historia",
           "inicio": "basico",
+          "cursos": [
+            {
+              "proveedor": "Khan Academy",
+              "nombre": "World history",
+              "url": "https://www.khanacademy.org/humanities/world-history"
+            }
+          ],
           "temas": [
             {
               "id": "historia-local",
               "nivel": "basico",
               "nombre": "Historia local",
-              "subtemas": ["Cronología", "Historia de tu país", "Fuentes primarias"]
+              "subtemas": [
+                "Cronología",
+                "Historia de tu país",
+                "Fuentes primarias"
+              ]
             },
             {
               "id": "historia-universal",
               "nivel": "intermedio",
               "nombre": "Historia universal",
-              "subtemas": ["Antigüedad y Edad Media", "Edad Moderna", "Historia de América"]
+              "subtemas": [
+                "Antigüedad y Edad Media",
+                "Edad Moderna",
+                "Historia de América"
+              ]
             },
             {
               "id": "historia-contemporanea",
               "nivel": "avanzado",
               "nombre": "Historia contemporánea",
-              "subtemas": ["Revoluciones", "Siglos XIX y XX", "Procesos globales"]
+              "subtemas": [
+                "Revoluciones",
+                "Siglos XIX y XX",
+                "Procesos globales"
+              ]
             },
             {
               "id": "historiografia",
               "nivel": "universitario",
               "nombre": "Historiografía",
-              "subtemas": ["Método histórico", "Historia social y económica", "Corrientes historiográficas"]
+              "subtemas": [
+                "Método histórico",
+                "Historia social y económica",
+                "Corrientes historiográficas"
+              ]
             }
           ]
         },
@@ -373,61 +860,166 @@
           "id": "filosofia",
           "nombre": "Filosofía",
           "inicio": "basico",
+          "cursos": [
+            {
+              "proveedor": "Stanford",
+              "nombre": "Encyclopedia of Philosophy",
+              "url": "https://plato.stanford.edu"
+            }
+          ],
           "temas": [
             {
               "id": "preguntas-basicas",
               "nivel": "basico",
               "nombre": "Preguntas básicas",
-              "subtemas": ["Ética cotidiana", "Pensamiento crítico", "Historia de las ideas"]
+              "subtemas": [
+                "Ética cotidiana",
+                "Pensamiento crítico",
+                "Historia de las ideas"
+              ]
             },
             {
               "id": "logica",
               "nivel": "intermedio",
               "nombre": "Lógica",
-              "subtemas": ["Argumentos y falacias", "Lógica proposicional", "Silogismos"]
+              "subtemas": [
+                "Argumentos y falacias",
+                "Lógica proposicional",
+                "Silogismos"
+              ]
             },
             {
-              "id": "epistemologia-y-etica",
+              "id": "etica-y-politica",
               "nivel": "avanzado",
-              "nombre": "Epistemología y ética",
-              "subtemas": ["Teoría del conocimiento", "Ética normativa", "Filosofía política"]
+              "nombre": "Ética y política",
+              "subtemas": [
+                "Ética normativa",
+                "Filosofía política",
+                "Bioética"
+              ]
             },
             {
-              "id": "filosofia-avanzada",
+              "id": "filosofia-teorica",
               "nivel": "universitario",
-              "nombre": "Filosofía avanzada",
-              "subtemas": ["Metafísica", "Filosofía de la ciencia", "Filosofía del lenguaje"]
+              "nombre": "Filosofía teórica",
+              "subtemas": [
+                "Epistemología",
+                "Metafísica",
+                "Filosofía de la ciencia"
+              ]
             }
           ]
         },
         {
-          "id": "economia-y-derecho",
-          "nombre": "Economía y derecho",
+          "id": "economia",
+          "nombre": "Economía",
           "inicio": "basico",
+          "cursos": [
+            {
+              "proveedor": "CORE Econ",
+              "nombre": "The Economy",
+              "url": "https://www.core-econ.org"
+            },
+            {
+              "proveedor": "Khan Academy",
+              "nombre": "Microeconomía",
+              "url": "https://es.khanacademy.org/economics-finance-domain/microeconomics"
+            }
+          ],
           "temas": [
             {
               "id": "economia-basica",
               "nivel": "basico",
               "nombre": "Economía básica",
-              "subtemas": ["Oferta y demanda", "Dinero e inflación", "Presupuesto personal"]
+              "subtemas": [
+                "Oferta y demanda",
+                "Dinero e inflación",
+                "Presupuesto personal"
+              ]
             },
             {
               "id": "micro-y-macroeconomia",
               "nivel": "intermedio",
               "nombre": "Micro y macroeconomía",
-              "subtemas": ["Mercados y precios", "PIB y crecimiento", "Política fiscal y monetaria"]
+              "subtemas": [
+                "Mercados y precios",
+                "PIB y crecimiento",
+                "Política fiscal y monetaria"
+              ]
             },
             {
-              "id": "finanzas-y-econometria",
+              "id": "finanzas",
               "nivel": "avanzado",
-              "nombre": "Finanzas y econometría",
-              "subtemas": ["Interés y valor del dinero", "Modelos econométricos", "Finanzas públicas"]
+              "nombre": "Finanzas",
+              "subtemas": [
+                "Interés y valor del dinero",
+                "Mercados financieros",
+                "Finanzas públicas"
+              ]
             },
             {
               "id": "teoria-economica",
               "nivel": "universitario",
               "nombre": "Teoría económica",
-              "subtemas": ["Equilibrio general", "Teoría de juegos", "Economía del desarrollo"]
+              "subtemas": [
+                "Equilibrio general",
+                "Teoría de juegos",
+                "Econometría"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "derecho-y-ciudadania",
+          "nombre": "Derecho y ciudadanía",
+          "inicio": "basico",
+          "cursos": [
+            {
+              "proveedor": "Naciones Unidas",
+              "nombre": "Declaración Universal de los Derechos Humanos",
+              "url": "https://www.un.org/es/about-us/universal-declaration-of-human-rights"
+            }
+          ],
+          "temas": [
+            {
+              "id": "ciudadania",
+              "nivel": "basico",
+              "nombre": "Ciudadanía",
+              "subtemas": [
+                "Derechos humanos",
+                "Constitución y Estado",
+                "Participación democrática"
+              ]
+            },
+            {
+              "id": "introduccion-al-derecho",
+              "nivel": "intermedio",
+              "nombre": "Introducción al derecho",
+              "subtemas": [
+                "Fuentes del derecho",
+                "Personas y contratos",
+                "Delitos y penas"
+              ]
+            },
+            {
+              "id": "derecho-publico",
+              "nivel": "avanzado",
+              "nombre": "Derecho público",
+              "subtemas": [
+                "Derecho constitucional",
+                "Derecho administrativo",
+                "Derecho internacional"
+              ]
+            },
+            {
+              "id": "teoria-del-derecho",
+              "nivel": "universitario",
+              "nombre": "Teoría del derecho",
+              "subtemas": [
+                "Filosofía del derecho",
+                "Derechos fundamentales",
+                "Argumentación jurídica"
+              ]
             }
           ]
         }
@@ -444,86 +1036,220 @@
           "id": "logica-y-programacion",
           "nombre": "Lógica y programación",
           "inicio": "basico",
+          "cursos": [
+            {
+              "proveedor": "Harvard",
+              "nombre": "CS50x",
+              "url": "https://cs50.harvard.edu/x/"
+            },
+            {
+              "proveedor": "freeCodeCamp",
+              "nombre": "Currículo en español",
+              "url": "https://www.freecodecamp.org/espanol/"
+            }
+          ],
           "temas": [
             {
               "id": "pensamiento-algoritmico",
               "nivel": "basico",
               "nombre": "Pensamiento algorítmico",
-              "subtemas": ["Variables y condicionales", "Bucles", "Funciones"]
+              "subtemas": [
+                "Variables y condicionales",
+                "Bucles",
+                "Funciones"
+              ]
             },
             {
               "id": "estructuras-de-datos",
               "nivel": "intermedio",
               "nombre": "Estructuras de datos",
-              "subtemas": ["Listas, pilas y colas", "Árboles", "Tablas hash"]
+              "subtemas": [
+                "Listas, pilas y colas",
+                "Árboles",
+                "Tablas hash"
+              ]
             },
             {
-              "id": "algoritmos-y-poo",
+              "id": "algoritmos",
               "nivel": "avanzado",
-              "nombre": "Algoritmos y POO",
-              "subtemas": ["Ordenamiento y búsqueda", "Grafos", "Complejidad Big-O"]
+              "nombre": "Algoritmos",
+              "subtemas": [
+                "Ordenamiento y búsqueda",
+                "Algoritmos sobre grafos",
+                "Complejidad Big-O"
+              ]
             },
             {
-              "id": "sistemas-operativos",
+              "id": "teoria-de-la-computacion",
               "nivel": "universitario",
-              "nombre": "Sistemas operativos",
-              "subtemas": ["Procesos e hilos", "Gestión de memoria", "Concurrencia"]
+              "nombre": "Teoría de la computación",
+              "subtemas": [
+                "Autómatas y lenguajes formales",
+                "Computabilidad",
+                "Complejidad P vs NP"
+              ]
             }
           ]
         },
         {
-          "id": "datos-y-redes",
-          "nombre": "Datos y redes",
-          "inicio": "intermedio",
+          "id": "sistemas-y-redes",
+          "nombre": "Sistemas y redes",
+          "inicio": "basico",
+          "cursos": [
+            {
+              "proveedor": "Nand2Tetris",
+              "nombre": "From Nand to Tetris",
+              "url": "https://www.nand2tetris.org"
+            },
+            {
+              "proveedor": "OSTEP",
+              "nombre": "Operating Systems: Three Easy Pieces",
+              "url": "https://pages.cs.wisc.edu/~remzi/OSTEP/"
+            }
+          ],
           "temas": [
             {
-              "id": "bases-de-datos",
-              "nivel": "intermedio",
-              "nombre": "Bases de datos",
-              "subtemas": ["SQL básico", "Modelo entidad-relación", "Normalización"]
+              "id": "como-funciona-una-computadora",
+              "nivel": "basico",
+              "nombre": "Cómo funciona una computadora",
+              "subtemas": [
+                "Sistema binario",
+                "Hardware y software",
+                "Archivos y sistema operativo"
+              ]
             },
             {
               "id": "redes",
-              "nivel": "avanzado",
+              "nivel": "intermedio",
               "nombre": "Redes",
-              "subtemas": ["Modelo OSI", "TCP/IP", "Protocolos web"]
+              "subtemas": [
+                "Modelo OSI",
+                "TCP/IP",
+                "Protocolos web"
+              ]
+            },
+            {
+              "id": "sistemas-operativos",
+              "nivel": "avanzado",
+              "nombre": "Sistemas operativos",
+              "subtemas": [
+                "Procesos e hilos",
+                "Gestión de memoria",
+                "Concurrencia"
+              ]
             },
             {
               "id": "sistemas-distribuidos",
               "nivel": "universitario",
               "nombre": "Sistemas distribuidos",
-              "subtemas": ["Bases de datos distribuidas", "Seguridad informática", "Computación en la nube"]
+              "subtemas": [
+                "Consenso y replicación",
+                "Computación en la nube",
+                "Ciberseguridad"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "datos-e-inteligencia-artificial",
+          "nombre": "Datos e inteligencia artificial",
+          "inicio": "intermedio",
+          "cursos": [
+            {
+              "proveedor": "SQLBolt",
+              "nombre": "Lecciones interactivas de SQL",
+              "url": "https://sqlbolt.com"
+            },
+            {
+              "proveedor": "Kaggle",
+              "nombre": "Learn",
+              "url": "https://www.kaggle.com/learn"
+            },
+            {
+              "proveedor": "University of Helsinki",
+              "nombre": "Elements of AI",
+              "url": "https://www.elementsofai.com"
+            }
+          ],
+          "temas": [
+            {
+              "id": "bases-de-datos",
+              "nivel": "intermedio",
+              "nombre": "Bases de datos",
+              "subtemas": [
+                "SQL básico",
+                "Modelo entidad-relación",
+                "Normalización"
+              ]
+            },
+            {
+              "id": "ciencia-de-datos",
+              "nivel": "avanzado",
+              "nombre": "Ciencia de datos",
+              "subtemas": [
+                "Limpieza y visualización",
+                "Python para datos",
+                "Estadística aplicada"
+              ]
+            },
+            {
+              "id": "inteligencia-artificial",
+              "nivel": "universitario",
+              "nombre": "Inteligencia artificial",
+              "subtemas": [
+                "Aprendizaje automático",
+                "Redes neuronales",
+                "Ética de la IA"
+              ]
             }
           ]
         },
         {
           "id": "ingenieria-de-software",
           "nombre": "Ingeniería de software",
-          "inicio": "basico",
+          "inicio": "intermedio",
+          "cursos": [
+            {
+              "proveedor": "MIT",
+              "nombre": "The Missing Semester",
+              "url": "https://missing.csail.mit.edu"
+            },
+            {
+              "proveedor": "Scott Chacon",
+              "nombre": "Pro Git (español)",
+              "url": "https://git-scm.com/book/es/v2"
+            }
+          ],
           "temas": [
             {
-              "id": "requisitos",
-              "nivel": "basico",
-              "nombre": "Requisitos",
-              "subtemas": ["Historias de usuario", "Casos de uso", "Prototipos"]
-            },
-            {
-              "id": "diseno",
+              "id": "programacion-orientada-a-objetos",
               "nivel": "intermedio",
-              "nombre": "Diseño",
-              "subtemas": ["UML", "Patrones de diseño", "Arquitectura por capas"]
+              "nombre": "Programación orientada a objetos",
+              "subtemas": [
+                "Clases y objetos",
+                "Herencia y polimorfismo",
+                "Control de versiones con Git"
+              ]
             },
             {
-              "id": "calidad",
+              "id": "diseno-y-arquitectura",
               "nivel": "avanzado",
-              "nombre": "Calidad",
-              "subtemas": ["Pruebas unitarias", "Control de versiones", "Integración continua"]
+              "nombre": "Diseño y arquitectura",
+              "subtemas": [
+                "UML",
+                "Patrones de diseño",
+                "Arquitectura por capas"
+              ]
             },
             {
-              "id": "inteligencia-artificial",
+              "id": "calidad-y-procesos",
               "nivel": "universitario",
-              "nombre": "Inteligencia artificial",
-              "subtemas": ["Aprendizaje automático", "Redes neuronales", "Ética de la IA"]
+              "nombre": "Calidad y procesos",
+              "subtemas": [
+                "Pruebas automatizadas",
+                "Integración continua",
+                "Metodologías ágiles"
+              ]
             }
           ]
         }
@@ -532,28 +1258,172 @@
   ],
   "conexiones": [
     {
-      "desde": { "area": "matematicas", "tema": "calculo-multivariable", "etiqueta": "Cálculo" },
-      "hacia": { "area": "fisica", "tema": "electromagnetismo-y-termodinamica", "etiqueta": "Física: electromagnetismo" }
+      "tipo": "base",
+      "desde": {
+        "area": "matematicas",
+        "tema": "derivadas-e-integrales",
+        "etiqueta": "Cálculo"
+      },
+      "hacia": {
+        "area": "fisica",
+        "tema": "electromagnetismo",
+        "etiqueta": "Física: electromagnetismo"
+      },
+      "motivo": "Campos, flujos y leyes de Maxwell se escriben con derivadas e integrales."
     },
     {
-      "desde": { "area": "matematicas", "tema": "algebra-lineal", "etiqueta": "Álgebra lineal" },
-      "hacia": { "area": "fisica", "tema": "fisica-moderna", "etiqueta": "Física: mecánica cuántica" }
+      "tipo": "base",
+      "desde": {
+        "area": "matematicas",
+        "tema": "algebra-lineal",
+        "etiqueta": "Álgebra lineal"
+      },
+      "hacia": {
+        "area": "fisica",
+        "tema": "fisica-moderna",
+        "etiqueta": "Física: mecánica cuántica"
+      },
+      "motivo": "Los estados cuánticos son vectores y los observables, matrices."
     },
     {
-      "desde": { "area": "matematicas", "tema": "probabilidad", "etiqueta": "Probabilidad" },
-      "hacia": { "area": "biologia", "tema": "genetica-y-evolucion", "etiqueta": "Biología: genética de poblaciones" }
+      "tipo": "base",
+      "desde": {
+        "area": "matematicas",
+        "tema": "probabilidad",
+        "etiqueta": "Probabilidad"
+      },
+      "hacia": {
+        "area": "biologia",
+        "tema": "evolucion",
+        "etiqueta": "Biología: genética de poblaciones"
+      },
+      "motivo": "Las frecuencias de los genes cambian por azar y por selección."
     },
     {
-      "desde": { "area": "humanidades-y-sociales", "tema": "logica", "etiqueta": "Lógica" },
-      "hacia": { "area": "computacion", "tema": "pensamiento-algoritmico", "etiqueta": "Filosofía y computación" }
+      "tipo": "base",
+      "desde": {
+        "area": "humanidades-y-sociales",
+        "tema": "logica",
+        "etiqueta": "Lógica"
+      },
+      "hacia": {
+        "area": "matematicas",
+        "tema": "conjuntos-y-logica",
+        "etiqueta": "Matemática discreta"
+      },
+      "motivo": "La lógica proposicional es la misma en filosofía y en matemáticas."
     },
     {
-      "desde": { "area": "matematicas", "tema": "algebra-elemental", "etiqueta": "Matemática discreta" },
-      "hacia": { "area": "computacion", "tema": "algoritmos-y-poo", "etiqueta": "Algoritmos y grafos" }
+      "tipo": "base",
+      "desde": {
+        "area": "matematicas",
+        "tema": "combinatoria-y-grafos",
+        "etiqueta": "Teoría de grafos"
+      },
+      "hacia": {
+        "area": "computacion",
+        "tema": "algoritmos",
+        "etiqueta": "Algoritmos sobre grafos"
+      },
+      "motivo": "Rutas, redes y dependencias se modelan como grafos."
     },
     {
-      "desde": { "area": "lengua", "tema": "gramatica-y-redaccion", "etiqueta": "Redacción argumentativa" },
-      "hacia": { "area": "humanidades-y-sociales", "tema": "epistemologia-y-etica", "etiqueta": "Filosofía y ética" }
+      "tipo": "base",
+      "desde": {
+        "area": "matematicas",
+        "tema": "conjuntos-y-logica",
+        "etiqueta": "Conjuntos"
+      },
+      "hacia": {
+        "area": "computacion",
+        "tema": "bases-de-datos",
+        "etiqueta": "Bases de datos: álgebra relacional"
+      },
+      "motivo": "Una consulta SQL es una operación entre conjuntos."
+    },
+    {
+      "tipo": "base",
+      "desde": {
+        "area": "matematicas",
+        "tema": "algebra-lineal",
+        "etiqueta": "Álgebra lineal"
+      },
+      "hacia": {
+        "area": "computacion",
+        "tema": "inteligencia-artificial",
+        "etiqueta": "Redes neuronales"
+      },
+      "motivo": "Una red neuronal es una cadena de multiplicaciones de matrices."
+    },
+    {
+      "tipo": "base",
+      "desde": {
+        "area": "matematicas",
+        "tema": "inferencia",
+        "etiqueta": "Regresión"
+      },
+      "hacia": {
+        "area": "humanidades-y-sociales",
+        "tema": "teoria-economica",
+        "etiqueta": "Econometría"
+      },
+      "motivo": "La econometría aplica la inferencia estadística a datos económicos."
+    },
+    {
+      "tipo": "base",
+      "desde": {
+        "area": "quimica",
+        "tema": "enlaces-y-reacciones",
+        "etiqueta": "Enlaces y reacciones"
+      },
+      "hacia": {
+        "area": "biologia",
+        "tema": "bioquimica",
+        "etiqueta": "Bioquímica"
+      },
+      "motivo": "El metabolismo es química de reacciones dentro de la célula."
+    },
+    {
+      "tipo": "base",
+      "desde": {
+        "area": "fisica",
+        "tema": "fisica-moderna",
+        "etiqueta": "Mecánica cuántica"
+      },
+      "hacia": {
+        "area": "quimica",
+        "tema": "fisicoquimica",
+        "etiqueta": "Química cuántica"
+      },
+      "motivo": "Los orbitales y los enlaces se explican con la física cuántica."
+    },
+    {
+      "tipo": "base",
+      "desde": {
+        "area": "fisica",
+        "tema": "energia-y-calor",
+        "etiqueta": "Energía y calor"
+      },
+      "hacia": {
+        "area": "quimica",
+        "tema": "equilibrio-y-cinetica",
+        "etiqueta": "Termoquímica"
+      },
+      "motivo": "El calor de una reacción se mide con las mismas leyes de la energía."
+    },
+    {
+      "tipo": "base",
+      "desde": {
+        "area": "lengua",
+        "tema": "gramatica-y-redaccion",
+        "etiqueta": "Textos argumentativos"
+      },
+      "hacia": {
+        "area": "humanidades-y-sociales",
+        "tema": "etica-y-politica",
+        "etiqueta": "Debate ético y político"
+      },
+      "motivo": "Argumentar bien por escrito es la base del debate filosófico."
     }
   ]
 }

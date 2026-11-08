@@ -45,8 +45,8 @@
     }
     #world img {
       display: block;
-      width: 8680px;
-      height: 4050px;
+      width: 11920px;
+      height: 4430px;
       max-width: none;
       pointer-events: none;
       -webkit-user-drag: none;
@@ -110,16 +110,67 @@
       max-width: min(280px, calc(100% - 92px));
       pointer-events: none;
     }
+    .cursos-btn {
+      top: calc(12px + env(safe-area-inset-top));
+      right: calc(12px + env(safe-area-inset-right));
+      padding: 6px;
+    }
+    .cursos-btn button {
+      appearance: none;
+      border: 1px solid var(--line);
+      background: #0E1726;
+      color: var(--text);
+      border-radius: 10px;
+      min-height: 40px;
+      padding: 0 14px;
+      font: inherit;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+    #panel {
+      position: fixed;
+      z-index: 6;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: min(420px, 100%);
+      overflow-y: auto;
+      padding: calc(16px + env(safe-area-inset-top)) 18px calc(24px + env(safe-area-inset-bottom));
+      background: rgba(14, 23, 38, 0.97);
+      border-left: 1px solid var(--line);
+      transform: translateX(100%);
+      transition: transform 0.22s ease;
+      touch-action: pan-y;
+      -webkit-user-select: text;
+      user-select: text;
+    }
+    #panel.open { transform: none; }
+    #panel header { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    #panel h2 { margin: 0; font-size: 1.1rem; }
+    #panel header button {
+      appearance: none; border: 1px solid var(--line); background: transparent; color: var(--text);
+      border-radius: 10px; min-width: 40px; min-height: 40px; font-size: 1.1rem; cursor: pointer;
+    }
+    #panel .nota { color: var(--muted); font-size: 0.82rem; margin: 8px 0 4px; }
+    #panel h3 { margin: 20px 0 6px; font-size: 0.95rem; display: flex; align-items: center; gap: 8px; }
+    #panel h3 i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+    #panel .esp { margin: 10px 0 0; }
+    #panel .esp b { display: block; font-size: 0.86rem; font-weight: 600; }
+    #panel .esp small { color: var(--muted); font-size: 0.75rem; }
+    #panel ul { margin: 4px 0 0; padding-left: 18px; }
+    #panel li { font-size: 0.84rem; margin: 3px 0; color: var(--muted); }
+    #panel a { color: #9DB8FF; text-decoration: none; }
+    #panel a:hover { text-decoration: underline; }
     @media (max-width: 640px) {
       .hint { display: none; }
-      .title { font-size: 0.86rem; }
+      .title { font-size: 0.86rem; right: calc(110px + env(safe-area-inset-right)); }
     }
   </style>
 </head>
 <body>
   <div id="viewport">
     <div id="world">
-      <img src="diagrama.svg" width="8680" height="4050" alt="Atlas Ruta · mapa de conocimiento" draggable="false">
+      <img src="diagrama.svg" width="11920" height="4430" alt="Atlas Ruta · mapa de conocimiento" draggable="false">
     </div>
   </div>
   <div class="hud title">
@@ -128,6 +179,17 @@
       <span>Mapa de conocimiento · arrastra para mover · pellizca o rueda para zoom</span>
     </div>
   </div>
+  <div class="hud cursos-btn">
+    <button type="button" id="openCursos" aria-controls="panel" aria-expanded="false">Cursos</button>
+  </div>
+  <aside id="panel" aria-label="Cursos sugeridos" aria-hidden="true">
+    <header>
+      <h2>Cursos sugeridos</h2>
+      <button type="button" id="closeCursos" aria-label="Cerrar">✕</button>
+    </header>
+    <p class="nota">Uno o más cursos gratuitos por camino. Datos de <a href="ruta.json">ruta.json</a>.</p>
+    <div id="cursos">Cargando…</div>
+  </aside>
   <div class="hud tools">
     <button type="button" id="zoomIn" aria-label="Acercar">+</button>
     <div class="zoom-label" id="zoomPct">100%</div>
@@ -139,7 +201,7 @@
     En celular: un dedo mueve, dos dedos hacen zoom
   </div>
   <script>
-    const W = 8680, H = 4050;
+    const W = 11920, H = 4430;
     const MIN = 0.08, MAX = 4;
     const viewport = document.getElementById("viewport");
     const world = document.getElementById("world");
@@ -269,6 +331,47 @@
         fit();
       }
     });
+
+    const panel = document.getElementById("panel");
+    const openBtn = document.getElementById("openCursos");
+    function setPanel(open) {
+      panel.classList.toggle("open", open);
+      panel.setAttribute("aria-hidden", String(!open));
+      openBtn.setAttribute("aria-expanded", String(open));
+    }
+    openBtn.onclick = () => setPanel(!panel.classList.contains("open"));
+    document.getElementById("closeCursos").onclick = () => setPanel(false);
+    window.addEventListener("keydown", (e) => { if (e.key === "Escape") setPanel(false); });
+    for (const ev of ["pointerdown", "wheel"]) panel.addEventListener(ev, (e) => e.stopPropagation());
+
+    const NIVELES = { basico: "Básico", intermedio: "Intermedio", avanzado: "Avanzado", universitario: "Universitario" };
+    function el(tag, props = {}, ...kids) {
+      const n = Object.assign(document.createElement(tag), props);
+      n.append(...kids);
+      return n;
+    }
+    fetch("ruta.json")
+      .then((r) => r.json())
+      .then((data) => {
+        const box = document.getElementById("cursos");
+        box.textContent = "";
+        for (const area of data.areas) {
+          const dot = el("i");
+          dot.style.background = area.color;
+          box.append(el("h3", {}, dot, area.nombre));
+          for (const esp of area.especialidades) {
+            const ul = el("ul");
+            for (const c of esp.cursos || []) {
+              ul.append(el("li", {}, el("a", { href: c.url, target: "_blank", rel: "noopener", textContent: c.nombre }), " · " + c.proveedor));
+            }
+            box.append(el("div", { className: "esp" },
+              el("b", { textContent: esp.nombre }),
+              el("small", { textContent: "Desde " + NIVELES[esp.inicio] + " · " + esp.temas.length + " temas" }),
+              ul));
+          }
+        }
+      })
+      .catch(() => { document.getElementById("cursos").textContent = "No se pudo cargar ruta.json."; });
 
     window.addEventListener("resize", fit);
     const img = world.querySelector("img");
