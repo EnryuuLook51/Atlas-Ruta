@@ -1,0 +1,6 @@
+*
+!.gitignore
+!AGENTS.md
+!vercel.json
+!visor/
+!visor/**

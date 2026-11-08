@@ -1,0 +1,559 @@
+{
+  "id": "atlas-ruta",
+  "nombre": "Atlas Ruta",
+  "subtitulo": "Mapa de conocimiento",
+  "descripcion": "Desde las bases hasta el nivel universitario. Cada línea de color es un área, cada estación es un tema y, dentro de cada tema, están sus subtemas. Las líneas se bifurcan cuando una materia se abre en varias especialidades.",
+  "comoLeer": "Elige un área. Avanza de las bases al nivel universitario. Área → especialidad → tema. El progreso se lee de arriba abajo.",
+  "referencia": "Nivel de referencia: educación básica hasta licenciatura. Los temas universitarios varían según la carrera.",
+  "actualizado": "2026-11-07",
+  "niveles": [
+    { "id": "basico", "orden": 1, "nombre": "Básico" },
+    { "id": "intermedio", "orden": 2, "nombre": "Intermedio" },
+    { "id": "avanzado", "orden": 3, "nombre": "Avanzado" },
+    { "id": "universitario", "orden": 4, "nombre": "Universitario" }
+  ],
+  "areas": [
+    {
+      "id": "matematicas",
+      "indice": 1,
+      "nombre": "Matemáticas",
+      "color": "#FFB703",
+      "descripcion": "Lenguaje de todas las ciencias: del cálculo mental al análisis.",
+      "especialidades": [
+        {
+          "id": "numeros-y-algebra",
+          "nombre": "Números y álgebra",
+          "inicio": "basico",
+          "temas": [
+            {
+              "id": "numeros-y-operaciones",
+              "nivel": "basico",
+              "nombre": "Números y operaciones",
+              "subtemas": ["Enteros y fracciones", "Decimales y porcentajes", "Proporciones y regla de tres"]
+            },
+            {
+              "id": "algebra-elemental",
+              "nivel": "intermedio",
+              "nombre": "Álgebra elemental",
+              "subtemas": ["Expresiones algebraicas", "Ecuaciones de primer grado", "Sistemas de ecuaciones"]
+            },
+            {
+              "id": "funciones",
+              "nivel": "avanzado",
+              "nombre": "Funciones",
+              "subtemas": ["Lineales y cuadráticas", "Exponenciales", "Logaritmos"]
+            },
+            {
+              "id": "algebra-lineal",
+              "nivel": "universitario",
+              "nombre": "Álgebra lineal",
+              "subtemas": ["Matrices y determinantes", "Espacios vectoriales", "Valores y vectores propios"]
+            }
+          ]
+        },
+        {
+          "id": "geometria-y-trigonometria",
+          "nombre": "Geometría y trigonometría",
+          "inicio": "basico",
+          "temas": [
+            {
+              "id": "geometria-plana",
+              "nivel": "basico",
+              "nombre": "Geometría plana",
+              "subtemas": ["Figuras y ángulos", "Áreas y perímetros", "Teorema de Pitágoras"]
+            },
+            {
+              "id": "trigonometria",
+              "nivel": "intermedio",
+              "nombre": "Trigonometría",
+              "subtemas": ["Razones trigonométricas", "Identidades", "Triángulos no rectángulos"]
+            },
+            {
+              "id": "geometria-analitica",
+              "nivel": "avanzado",
+              "nombre": "Geometría analítica",
+              "subtemas": ["Rectas y circunferencias", "Cónicas", "Vectores en el plano"]
+            },
+            {
+              "id": "topologia-y-geometria",
+              "nivel": "universitario",
+              "nombre": "Topología y geometría",
+              "subtemas": ["Espacios métricos", "Conjuntos abiertos y cerrados", "Geometría diferencial"]
+            }
+          ]
+        },
+        {
+          "id": "calculo-y-analisis",
+          "nombre": "Cálculo y análisis",
+          "inicio": "intermedio",
+          "temas": [
+            {
+              "id": "limites-y-continuidad",
+              "nivel": "intermedio",
+              "nombre": "Límites y continuidad",
+              "subtemas": ["Límites y sus propiedades", "Continuidad", "Indeterminaciones"]
+            },
+            {
+              "id": "derivadas-e-integrales",
+              "nivel": "avanzado",
+              "nombre": "Derivadas e integrales",
+              "subtemas": ["Reglas de derivación", "Optimización", "Integral definida y áreas"]
+            },
+            {
+              "id": "calculo-multivariable",
+              "nivel": "universitario",
+              "nombre": "Cálculo multivariable",
+              "subtemas": ["Derivadas parciales", "Integrales múltiples", "Ecuaciones diferenciales"]
+            }
+          ]
+        },
+        {
+          "id": "probabilidad-y-estadistica",
+          "nombre": "Probabilidad y estadística",
+          "inicio": "basico",
+          "temas": [
+            {
+              "id": "estadistica-descriptiva",
+              "nivel": "basico",
+              "nombre": "Estadística descriptiva",
+              "subtemas": ["Media, mediana y moda", "Tablas y gráficos", "Dispersión"]
+            },
+            {
+              "id": "probabilidad",
+              "nivel": "intermedio",
+              "nombre": "Probabilidad",
+              "subtemas": ["Conteo y combinatoria", "Eventos y reglas", "Teorema de Bayes"]
+            },
+            {
+              "id": "distribuciones",
+              "nivel": "avanzado",
+              "nombre": "Distribuciones",
+              "subtemas": ["Binomial", "Normal", "Distribución muestral"]
+            },
+            {
+              "id": "inferencia",
+              "nivel": "universitario",
+              "nombre": "Inferencia",
+              "subtemas": ["Estimación", "Pruebas de hipótesis", "Regresión"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fisica",
+      "indice": 2,
+      "nombre": "Física",
+      "color": "#00B4D8",
+      "descripcion": "Cómo se mueve y se transforma la materia y la energía.",
+      "especialidades": [
+        {
+          "id": "de-la-medicion-a-la-mecanica",
+          "nombre": "De la medición a la mecánica",
+          "inicio": "basico",
+          "temas": [
+            {
+              "id": "magnitudes-y-medicion",
+              "nivel": "basico",
+              "nombre": "Magnitudes y medición",
+              "subtemas": ["Unidades y cifras significativas", "Vectores", "Notación científica"]
+            },
+            {
+              "id": "mecanica-clasica",
+              "nivel": "intermedio",
+              "nombre": "Mecánica clásica",
+              "subtemas": ["Cinemática", "Dinámica y leyes de Newton", "Trabajo y energía"]
+            },
+            {
+              "id": "electromagnetismo-y-termodinamica",
+              "nivel": "avanzado",
+              "nombre": "Electromagnetismo y termodinámica",
+              "subtemas": ["Carga, campo y circuitos", "Calor y temperatura", "Leyes de la termodinámica"]
+            },
+            {
+              "id": "fisica-moderna",
+              "nivel": "universitario",
+              "nombre": "Física moderna",
+              "subtemas": ["Relatividad especial", "Mecánica cuántica", "Física estadística"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "quimica",
+      "indice": 3,
+      "nombre": "Química",
+      "color": "#9EF01A",
+      "descripcion": "La estructura de la materia y sus transformaciones.",
+      "especialidades": [
+        {
+          "id": "de-la-materia-a-la-reaccion",
+          "nombre": "De la materia a la reacción",
+          "inicio": "basico",
+          "temas": [
+            {
+              "id": "materia",
+              "nivel": "basico",
+              "nombre": "Materia",
+              "subtemas": ["Estados y mezclas", "Tabla periódica", "Átomos y electrones"]
+            },
+            {
+              "id": "enlaces-y-reacciones",
+              "nivel": "intermedio",
+              "nombre": "Enlaces y reacciones",
+              "subtemas": ["Enlace iónico y covalente", "Estequiometría", "Ácidos y bases"]
+            },
+            {
+              "id": "organica-e-inorganica",
+              "nivel": "avanzado",
+              "nombre": "Orgánica e inorgánica",
+              "subtemas": ["Grupos funcionales", "Compuestos de coordinación", "Termoquímica"]
+            },
+            {
+              "id": "fisicoquimica-y-analitica",
+              "nivel": "universitario",
+              "nombre": "Fisicoquímica y analítica",
+              "subtemas": ["Cinética química", "Equilibrio", "Espectroscopía"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "biologia",
+      "indice": 4,
+      "nombre": "Biología",
+      "color": "#52B788",
+      "descripcion": "La vida, desde la célula hasta los ecosistemas.",
+      "especialidades": [
+        {
+          "id": "de-la-celula-a-la-molecula",
+          "nombre": "De la célula a la molécula",
+          "inicio": "basico",
+          "temas": [
+            {
+              "id": "la-celula",
+              "nivel": "basico",
+              "nombre": "La célula",
+              "subtemas": ["Membrana y organelos", "Ciclo celular", "Metabolismo básico"]
+            },
+            {
+              "id": "genetica-y-evolucion",
+              "nivel": "intermedio",
+              "nombre": "Genética y evolución",
+              "subtemas": ["Herencia mendeliana", "ADN y cromosomas", "Selección natural"]
+            },
+            {
+              "id": "fisiologia-y-ecologia",
+              "nivel": "avanzado",
+              "nombre": "Fisiología y ecología",
+              "subtemas": ["Sistemas del cuerpo", "Poblaciones y comunidades", "Ciclos biogeoquímicos"]
+            },
+            {
+              "id": "biologia-molecular",
+              "nivel": "universitario",
+              "nombre": "Biología molecular",
+              "subtemas": ["Replicación y expresión génica", "Inmunología", "Biotecnología"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lengua",
+      "indice": 5,
+      "nombre": "Lengua",
+      "color": "#EF476F",
+      "descripcion": "Leer, escribir y analizar textos, y aprender otras lenguas.",
+      "especialidades": [
+        {
+          "id": "lectura-gramatica-y-literatura",
+          "nombre": "Lectura, gramática y literatura",
+          "inicio": "basico",
+          "temas": [
+            {
+              "id": "lectoescritura",
+              "nivel": "basico",
+              "nombre": "Lectoescritura",
+              "subtemas": ["Ortografía y puntuación", "Comprensión lectora", "Vocabulario"]
+            },
+            {
+              "id": "gramatica-y-redaccion",
+              "nivel": "intermedio",
+              "nombre": "Gramática y redacción",
+              "subtemas": ["Sintaxis y morfología", "Textos argumentativos", "Figuras retóricas"]
+            },
+            {
+              "id": "analisis-literario",
+              "nivel": "avanzado",
+              "nombre": "Análisis literario",
+              "subtemas": ["Géneros literarios", "Corrientes y épocas", "Análisis de textos"]
+            },
+            {
+              "id": "linguistica-y-filologia",
+              "nivel": "universitario",
+              "nombre": "Lingüística y filología",
+              "subtemas": ["Fonética y fonología", "Semántica y pragmática", "Teoría literaria"]
+            }
+          ]
+        },
+        {
+          "id": "idiomas",
+          "nombre": "Idiomas",
+          "inicio": "basico",
+          "temas": [
+            {
+              "id": "bases-a1-a2",
+              "nivel": "basico",
+              "nombre": "Bases (A1–A2)",
+              "subtemas": ["Vocabulario cotidiano", "Presente y pasado simple", "Conversación básica"]
+            },
+            {
+              "id": "independiente-b1-b2",
+              "nivel": "intermedio",
+              "nombre": "Independiente (B1–B2)",
+              "subtemas": ["Textos de opinión", "Conversación fluida", "Tiempos compuestos"]
+            },
+            {
+              "id": "avanzado-c1",
+              "nivel": "avanzado",
+              "nombre": "Avanzado (C1)",
+              "subtemas": ["Matices y registros", "Textos complejos", "Expresión escrita"]
+            },
+            {
+              "id": "dominio-c2",
+              "nivel": "universitario",
+              "nombre": "Dominio (C2)",
+              "subtemas": ["Traducción", "Redacción académica", "Interpretación de textos"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "humanidades-y-sociales",
+      "indice": 6,
+      "nombre": "Humanidades y sociales",
+      "color": "#B388FF",
+      "descripcion": "Historia, pensamiento y cómo funcionan las sociedades.",
+      "especialidades": [
+        {
+          "id": "historia",
+          "nombre": "Historia",
+          "inicio": "basico",
+          "temas": [
+            {
+              "id": "historia-local",
+              "nivel": "basico",
+              "nombre": "Historia local",
+              "subtemas": ["Cronología", "Historia de tu país", "Fuentes primarias"]
+            },
+            {
+              "id": "historia-universal",
+              "nivel": "intermedio",
+              "nombre": "Historia universal",
+              "subtemas": ["Antigüedad y Edad Media", "Edad Moderna", "Historia de América"]
+            },
+            {
+              "id": "historia-contemporanea",
+              "nivel": "avanzado",
+              "nombre": "Historia contemporánea",
+              "subtemas": ["Revoluciones", "Siglos XIX y XX", "Procesos globales"]
+            },
+            {
+              "id": "historiografia",
+              "nivel": "universitario",
+              "nombre": "Historiografía",
+              "subtemas": ["Método histórico", "Historia social y económica", "Corrientes historiográficas"]
+            }
+          ]
+        },
+        {
+          "id": "filosofia",
+          "nombre": "Filosofía",
+          "inicio": "basico",
+          "temas": [
+            {
+              "id": "preguntas-basicas",
+              "nivel": "basico",
+              "nombre": "Preguntas básicas",
+              "subtemas": ["Ética cotidiana", "Pensamiento crítico", "Historia de las ideas"]
+            },
+            {
+              "id": "logica",
+              "nivel": "intermedio",
+              "nombre": "Lógica",
+              "subtemas": ["Argumentos y falacias", "Lógica proposicional", "Silogismos"]
+            },
+            {
+              "id": "epistemologia-y-etica",
+              "nivel": "avanzado",
+              "nombre": "Epistemología y ética",
+              "subtemas": ["Teoría del conocimiento", "Ética normativa", "Filosofía política"]
+            },
+            {
+              "id": "filosofia-avanzada",
+              "nivel": "universitario",
+              "nombre": "Filosofía avanzada",
+              "subtemas": ["Metafísica", "Filosofía de la ciencia", "Filosofía del lenguaje"]
+            }
+          ]
+        },
+        {
+          "id": "economia-y-derecho",
+          "nombre": "Economía y derecho",
+          "inicio": "basico",
+          "temas": [
+            {
+              "id": "economia-basica",
+              "nivel": "basico",
+              "nombre": "Economía básica",
+              "subtemas": ["Oferta y demanda", "Dinero e inflación", "Presupuesto personal"]
+            },
+            {
+              "id": "micro-y-macroeconomia",
+              "nivel": "intermedio",
+              "nombre": "Micro y macroeconomía",
+              "subtemas": ["Mercados y precios", "PIB y crecimiento", "Política fiscal y monetaria"]
+            },
+            {
+              "id": "finanzas-y-econometria",
+              "nivel": "avanzado",
+              "nombre": "Finanzas y econometría",
+              "subtemas": ["Interés y valor del dinero", "Modelos econométricos", "Finanzas públicas"]
+            },
+            {
+              "id": "teoria-economica",
+              "nivel": "universitario",
+              "nombre": "Teoría económica",
+              "subtemas": ["Equilibrio general", "Teoría de juegos", "Economía del desarrollo"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "computacion",
+      "indice": 7,
+      "nombre": "Computación",
+      "color": "#5C7CFA",
+      "descripcion": "Pensamiento algorítmico, software, datos y sistemas.",
+      "especialidades": [
+        {
+          "id": "logica-y-programacion",
+          "nombre": "Lógica y programación",
+          "inicio": "basico",
+          "temas": [
+            {
+              "id": "pensamiento-algoritmico",
+              "nivel": "basico",
+              "nombre": "Pensamiento algorítmico",
+              "subtemas": ["Variables y condicionales", "Bucles", "Funciones"]
+            },
+            {
+              "id": "estructuras-de-datos",
+              "nivel": "intermedio",
+              "nombre": "Estructuras de datos",
+              "subtemas": ["Listas, pilas y colas", "Árboles", "Tablas hash"]
+            },
+            {
+              "id": "algoritmos-y-poo",
+              "nivel": "avanzado",
+              "nombre": "Algoritmos y POO",
+              "subtemas": ["Ordenamiento y búsqueda", "Grafos", "Complejidad Big-O"]
+            },
+            {
+              "id": "sistemas-operativos",
+              "nivel": "universitario",
+              "nombre": "Sistemas operativos",
+              "subtemas": ["Procesos e hilos", "Gestión de memoria", "Concurrencia"]
+            }
+          ]
+        },
+        {
+          "id": "datos-y-redes",
+          "nombre": "Datos y redes",
+          "inicio": "intermedio",
+          "temas": [
+            {
+              "id": "bases-de-datos",
+              "nivel": "intermedio",
+              "nombre": "Bases de datos",
+              "subtemas": ["SQL básico", "Modelo entidad-relación", "Normalización"]
+            },
+            {
+              "id": "redes",
+              "nivel": "avanzado",
+              "nombre": "Redes",
+              "subtemas": ["Modelo OSI", "TCP/IP", "Protocolos web"]
+            },
+            {
+              "id": "sistemas-distribuidos",
+              "nivel": "universitario",
+              "nombre": "Sistemas distribuidos",
+              "subtemas": ["Bases de datos distribuidas", "Seguridad informática", "Computación en la nube"]
+            }
+          ]
+        },
+        {
+          "id": "ingenieria-de-software",
+          "nombre": "Ingeniería de software",
+          "inicio": "basico",
+          "temas": [
+            {
+              "id": "requisitos",
+              "nivel": "basico",
+              "nombre": "Requisitos",
+              "subtemas": ["Historias de usuario", "Casos de uso", "Prototipos"]
+            },
+            {
+              "id": "diseno",
+              "nivel": "intermedio",
+              "nombre": "Diseño",
+              "subtemas": ["UML", "Patrones de diseño", "Arquitectura por capas"]
+            },
+            {
+              "id": "calidad",
+              "nivel": "avanzado",
+              "nombre": "Calidad",
+              "subtemas": ["Pruebas unitarias", "Control de versiones", "Integración continua"]
+            },
+            {
+              "id": "inteligencia-artificial",
+              "nivel": "universitario",
+              "nombre": "Inteligencia artificial",
+              "subtemas": ["Aprendizaje automático", "Redes neuronales", "Ética de la IA"]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "conexiones": [
+    {
+      "desde": { "area": "matematicas", "tema": "calculo-multivariable", "etiqueta": "Cálculo" },
+      "hacia": { "area": "fisica", "tema": "electromagnetismo-y-termodinamica", "etiqueta": "Física: electromagnetismo" }
+    },
+    {
+      "desde": { "area": "matematicas", "tema": "algebra-lineal", "etiqueta": "Álgebra lineal" },
+      "hacia": { "area": "fisica", "tema": "fisica-moderna", "etiqueta": "Física: mecánica cuántica" }
+    },
+    {
+      "desde": { "area": "matematicas", "tema": "probabilidad", "etiqueta": "Probabilidad" },
+      "hacia": { "area": "biologia", "tema": "genetica-y-evolucion", "etiqueta": "Biología: genética de poblaciones" }
+    },
+    {
+      "desde": { "area": "humanidades-y-sociales", "tema": "logica", "etiqueta": "Lógica" },
+      "hacia": { "area": "computacion", "tema": "pensamiento-algoritmico", "etiqueta": "Filosofía y computación" }
+    },
+    {
+      "desde": { "area": "matematicas", "tema": "algebra-elemental", "etiqueta": "Matemática discreta" },
+      "hacia": { "area": "computacion", "tema": "algoritmos-y-poo", "etiqueta": "Algoritmos y grafos" }
+    },
+    {
+      "desde": { "area": "lengua", "tema": "gramatica-y-redaccion", "etiqueta": "Redacción argumentativa" },
+      "hacia": { "area": "humanidades-y-sociales", "tema": "epistemologia-y-etica", "etiqueta": "Filosofía y ética" }
+    }
+  ]
+}
